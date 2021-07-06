@@ -1,7 +1,7 @@
 #include <gtkmm.h>
 
-struct GtkOpenApplication : Gtk::Application {
-    GtkOpenApplication() : Gtk::Application("", Gio::APPLICATION_HANDLES_OPEN) {}
+struct GtkOpenWithApplication : Gtk::Application {
+    GtkOpenWithApplication() : Gtk::Application("", Gio::APPLICATION_HANDLES_OPEN) {}
 
     void on_open(const Gio::Application::type_vec_files& files, const Glib::ustring&) override {
         auto dialog = Gtk::AppChooserDialog(files.front());
@@ -13,5 +13,5 @@ struct GtkOpenApplication : Gtk::Application {
 
 int main (int argc, char *argv[])
 {
-    return GtkOpenApplication().run(argc, argv);
+    return GtkOpenWithApplication().run(argc, argv);
 }
