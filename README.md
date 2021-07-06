@@ -14,6 +14,7 @@ gtk-open-with [files]
 mkdir build
 cd build
 cmake ..
+make
 ```
 
 ## Dependencies
